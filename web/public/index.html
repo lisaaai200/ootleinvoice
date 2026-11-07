@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OotleInvoice — create invoice</title><link rel="stylesheet" href="style.css"></head><body>
+<h1>OotleInvoice</h1>
+<p class="demo">DEMO MODE — browser-only simulation. No wallet, no Tari network, no real payments. On-chain logic lives in the Rust template and is tested separately in the official Ootle engine harness.</p>
+<form id="f">
+<label>Reference (A-Z a-z 0-9 _ -)<input id="ref" required maxlength="64" value="INV-001"></label>
+<label>Amount (TARI, up to 6 decimals)<input id="amt" required value="2.5"></label>
+<label>Memo (kept off-chain; only its SHA-256 goes on-chain)<textarea id="memo" maxlength="280">Logo design, 2 revisions</textarea></label>
+<label>Expires after epoch<input id="exp" type="number" min="2" value="10"></label>
+<label>Invoice component address (optional; component_&lt;64 hex&gt;)<input id="comp" placeholder="leave blank for demo"></label>
+<button>Create invoice</button></form>
+<p id="msg"></p><div id="out" hidden><p>Payment link:</p><p><code id="link"></code></p><img class="qr" id="qr" alt="QR code for payment link"></div>
+<script type="module" src="create.mjs"></script></body></html>
