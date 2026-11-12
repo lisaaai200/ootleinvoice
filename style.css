@@ -1,0 +1,5 @@
+body{font-family:system-ui,sans-serif;max-width:720px;margin:2rem auto;padding:0 1rem;color:#111}
+.demo{background:#fff3cd;border:2px solid #d39e00;padding:.6rem .8rem;border-radius:6px;font-weight:600}
+label{display:block;margin:.6rem 0 .2rem}input,textarea{width:100%;padding:.45rem;box-sizing:border-box}
+button{margin:.5rem .4rem .5rem 0;padding:.5rem .9rem}.err{color:#b00020}.ok{color:#0a7a2f}
+code{word-break:break-all;background:#f3f3f3;padding:.1rem .3rem}img.qr{width:220px;height:220px}

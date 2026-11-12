@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OotleInvoice — pay</title><link rel="stylesheet" href="style.css"></head><body>
+<h1>Invoice</h1>
+<p class="demo">DEMO MODE — simulated payment only. Nothing is sent on Tari. Real payment would be a wallet transaction calling the template's <code>pay</code> method.</p>
+<div id="inv"></div>
+<label>Amount to send in demo (micro-TARI)<input id="send"></label>
+<button id="pay">Simulate payment</button> <button id="tick">Advance demo epoch +1</button>
+<p id="msg"></p><pre id="receipt"></pre><button id="verify" hidden>Verify receipt (demo)</button>
+<script type="module" src="pay.mjs"></script></body></html>
