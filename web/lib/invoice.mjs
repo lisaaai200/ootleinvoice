@@ -37,7 +37,10 @@ export function validateInvoice(inv) {
 /** Invoice link. Contains only public invoice terms — no keys, no secrets. */
 export function buildPayUrl(base, inv) {
   validateInvoice(inv);
-  const u = new URL('/pay.html', base);
+  // Resolve relative to the app directory so GitHub Pages project URLs work
+  // (https://user.github.io/repo/pay.html), not only origin-root local servers.
+  const root = base.endsWith('/') ? base : `${base}/`;
+  const u = new URL('pay.html', root);
   const p = u.searchParams;
   if (inv.component) p.set('c', inv.component);
   p.set('r', inv.reference); p.set('a', inv.amount.toString()); p.set('h', inv.memoHash);

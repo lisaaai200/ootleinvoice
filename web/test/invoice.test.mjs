@@ -18,6 +18,8 @@ test('pay url round-trip carries only public terms', async () => {
   assert.doesNotMatch(url, /secret|key|seed/i);
   const back = await parsePayUrl(url);
   assert.equal(back.amount, inv.amount); assert.equal(back.memoHash, inv.memoHash);
+  const hosted = buildPayUrl('https://example.com/ootleinvoice/', inv);
+  assert.equal(new URL(hosted).pathname, '/ootleinvoice/pay.html');
 });
 test('tampered memo or amount in link rejected', async () => {
   const url = new URL(buildPayUrl('http://x', await base()));

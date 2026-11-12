@@ -7,6 +7,14 @@ transaction, funds go straight to the merchant's account, and the payer gets a r
 > **Status: non-production prototype.** Not audited. Not deployed to any network.
 > No security guarantees beyond what the tests below demonstrate.
 
+
+## Live demo
+
+A walletless browser simulation is published at
+**https://lisaaai200.github.io/ootleinvoice/** . It is the same DEMO MODE as `web/`:
+no wallet, no Tari network, and no real payments. Mainnet (and testnet) deployment
+of the Ootle template is pending and is not included in this release.
+
 ## What is real vs. simulated
 
 | Part | Level of integration |
@@ -44,6 +52,8 @@ cargo test --release          # first run compiles the engine (~2 min on 8 cores
 cd ../web && npm install && npm test
 PORT=8795 npm start           # http://127.0.0.1:8795/ (binds localhost only)
 ```
+
+Verified locally: `tari_template_lib` 0.38.0, `tari_template_test_tooling` 0.50.1, release WASM ~158 KB (unoptimised). Run `wasm-opt` before any network publish.
 
 ## Tests (engine harness)
 
